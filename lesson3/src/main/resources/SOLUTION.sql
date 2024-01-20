@@ -1,18 +1,18 @@
-ALTER TABLE Student
-MODIFY COLUMN birthday date NOT NULL;
+ALTER TABLE student
+MODIFY birthday DATE NOT NULL;
 
-ALTER TABLE Mark
-MODIFY COLUMN mark int CHECK (mark >= 1 AND mark <= 10) NOT NULL,
-MODIFY COLUMN student_id bigint NOT NULL,
-MODIFY COLUMN subject_id bigint NOT NULL;
+ALTER TABLE mark
+MODIFY mark INT CHECK (mark BETWEEN 1 AND 10) NOT NULL,
+MODIFY student_id BIGINT NOT NULL,
+MODIFY subject_id BIGINT NOT NULL;
 
-ALTER TABLE Subject
-MODIFY COLUMN grade int CHECK (grade >= 1 AND grade <= 5);
+ALTER TABLE subject
+MODIFY grade INT CHECK (grade BETWEEN 1 AND 5) NOT NULL;
 
-ALTER TABLE PaymentType
+ALTER TABLE paymenttype
 ADD CONSTRAINT unique_name UNIQUE (name);
 
-ALTER TABLE Payment
-MODIFY COLUMN type_id bigint NOT NULL,
-MODIFY COLUMN amount decimal NOT NULL,
-MODIFY COLUMN payment_date datetime NOT NULL;
+ALTER TABLE payment
+MODIFY type_id BIGINT NOT NULL,
+MODIFY amount DECIMAL(10,2) NOT NULL,
+MODIFY payment_date DATETIME NOT NULL;

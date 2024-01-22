@@ -1,24 +1,31 @@
-create table Student {
+CREATE TABLE Student (
     id bigint PRIMARY KEY,
-    name varchar,
+    name varchar(255),
     birthday date,
-    group int
-    };
+    student_group int
+);
 
-create table Subject {
+CREATE TABLE Student (
     id bigint PRIMARY KEY,
-    name varchar,
-    description varchar,
+    name varchar(255),
+    birthday date,
+    student_group int
+);
+
+create table Subject (
+    id bigint PRIMARY KEY,
+    name varchar (255),
+    description varchar (255),
     grade int
-    };
+    );
 
-create table PaymentType {
+create table PaymentType (
     id bigint PRIMARY KEY,
-    name varchar
-    };
+    name varchar (255)
+    );
 
 
-create table Payment {
+create table Payment (
     id bigint PRIMARY KEY,
     type_id bigint,
     amount decimal,
@@ -26,7 +33,7 @@ create table Payment {
     payment_date datetime,
     FOREIGN KEY (type_id) REFERENCES PaymentType(id),
     FOREIGN KEY (student_id) REFERENCES Student(id)
-    };
+    );
 
 create table Mark (
     id bigint PRIMARY KEY,
@@ -36,7 +43,6 @@ create table Mark (
     FOREIGN KEY (student_id) REFERENCES Student(id),
     FOREIGN KEY (subject_id) REFERENCES Subject(id)
 );
-
 
 
 

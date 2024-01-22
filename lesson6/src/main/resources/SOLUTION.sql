@@ -1,4 +1,4 @@
-SELECT * FROM Payment WHERE type_id = (SELECT type_id FROM PaymentType WHERE name = 'MONTHLY');
+SELECT * FROM Payment WHERE type_id = 4;
 
 SELECT * FROM Mark WHERE subject_id = (SELECT DISTINCT subject_id FROM Subject WHERE name = 'Art');
 
